@@ -1,5 +1,9 @@
+# 默认（暂未分类）
 node_modules
 .DS_Store
 dist
 dist-ssr
 *.local
+
+# 编辑器配置
+.vscode
