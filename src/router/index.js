@@ -15,6 +15,10 @@ const routes = [
         path: 'store',
         component: () => import('../pages/learn/store.vue'),
       },
+      {
+        path: 'network',
+        component: () => import('../pages/learn/network.vue'),
+      },
     ],
   },
 ]
