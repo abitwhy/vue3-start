@@ -14,9 +14,6 @@
     "*.{js,vue}": [
       "npm run precommit",
       "git add"
-    ],
-    ".vscode/*": [
-      "git rm --cached"
     ]
   },
   "dependencies": {
