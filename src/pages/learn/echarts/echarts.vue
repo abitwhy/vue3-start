@@ -80,8 +80,10 @@ export default {
   },
 }
 </script>
-<style lang="stylus">
-.echarts,.echart
-  width 300px
-  height 600px
+<style lang="scss">
+.echarts,
+.echart {
+  width: 300px;
+  height: 600px;
+}
 </style>

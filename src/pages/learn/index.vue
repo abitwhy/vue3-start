@@ -13,7 +13,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="stylus">
+<style lang="scss">
 // [vite CSS 预处理器](https://cn.vitejs.dev/guide/features.html#css-pre-processors)
 .learn {
   > h1 {

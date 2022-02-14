@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
 .chart {
   // width: 100%; // 宽度100%可省
   height: 100%;
