@@ -11,7 +11,7 @@ export default {
       // const { mobile } = navigator.userAgentData // 最新的 userAgentData 标准在 chrome 调试工具里还无法正常使用
       const mobile = navigator.userAgent.includes('Mobile') // 旧版方式
       const attribute = mobile ? null : 'title' // 动态参数的空值是 null
-      const event = mobile ? 'touchstart' : 'mouseenter' // 注意到 touch 类事件无法被触发
+      const event = mobile ? 'touchstart' : 'mouseenter'
 
       return { attribute, event }
     },
