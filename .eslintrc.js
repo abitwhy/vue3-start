@@ -10,7 +10,9 @@ module.exports = {
     requireConfigFile: false,
   },
   globals: {
+    // vue 编译器宏
     defineProps: true,
+    defineExpose: true,
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
