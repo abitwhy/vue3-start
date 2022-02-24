@@ -23,6 +23,16 @@ const routes = [
         path: 'echarts',
         component: () => import('../pages/learn/echarts/echarts.vue'),
       },
+      {
+        path: 'setup-script',
+        children: [
+          {
+            path: 'scope',
+            component: () => import('../pages/learn/setup-script/scope.vue'),
+          },
+        ],
+        component: () => import('../pages/learn/setup-script/index.vue'),
+      },
     ],
   },
 ]
