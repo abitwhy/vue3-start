@@ -2,7 +2,7 @@
   <div class="learn">
     <h1>vue3 语法学习</h1>
     <small>尽快掌握 vue3 + vite 项目的构建</small>
-    <router-view :name="name"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 <script lang="ts">
