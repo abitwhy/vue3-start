@@ -35,6 +35,16 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/play',
+    component: () => import('../pages/play/index.vue'),
+    children: [
+      {
+        path: 'typing',
+        component: () => import('../pages/play/typing.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
