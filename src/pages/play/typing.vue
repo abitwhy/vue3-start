@@ -19,7 +19,6 @@ export default {
     const loopArray = (origin, target) => {
       const { length } = origin,
         { length: targetLength } = target
-
       if (length === targetLength) {
         origin.splice(0)
       } else {
@@ -27,7 +26,7 @@ export default {
       }
     }
 
-    setInterval(loopArray.bind(null, dynamicTextArray, textArray), 800)
+    setInterval(loopArray.bind(null, dynamicTextArray, textArray), 200)
   },
 }
 </script>
