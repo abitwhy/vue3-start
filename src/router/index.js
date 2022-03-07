@@ -25,13 +25,13 @@ const routes = [
       },
       {
         path: 'setup-script',
+        component: () => import('../pages/learn/setup-script/index.vue'),
         children: [
           {
             path: 'scope',
             component: () => import('../pages/learn/setup-script/scope.vue'),
           },
         ],
-        component: () => import('../pages/learn/setup-script/index.vue'),
       },
     ],
   },
