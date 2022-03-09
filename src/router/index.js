@@ -1,8 +1,9 @@
+import { setPageTitle } from '@/utils/router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import home from '../pages/home.vue'
 
 const routes = [
-  { path: '/', component: home },
+  { path: '/', component: home, meta: { title: 'vite 学习之旅' } },
   {
     path: '/learn',
     component: () => import('../pages/learn/index.vue'),
@@ -52,4 +53,8 @@ const router = createRouter({
   routes,
 })
 
+router.beforeEach((to, from, next) => {
+  setPageTitle(router, to)
+  next()
+})
 export default router
