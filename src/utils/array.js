@@ -2,15 +2,15 @@
  * 遍历嵌套的数据结构
  *
  * @param {*} target 目标
- * @param {Function} callback 回调函数，接收参数： { item, key, index?, target }，其中 index 仅当 target 是类数组对象时存在
- * @param {Object} option? 配置
+ * @param {function} callback 回调函数，接收参数： { item, key, index?, target }，其中 index 仅当 target 是类数组对象时存在
+ * @param {object} option? 配置
  */
 export const traverse = (
   target,
   callback,
   /**
    * @namespace
-   * @property {String} subkey? 子数组键名
+   * @property {string} subkey? 子数组键名
    */
   option
 ) => {

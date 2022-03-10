@@ -12,8 +12,8 @@ export default function log() {
 
 /**
  * @description 返回这个样式的颜色值
- * @param {String} type 样式名称 [ primary | success | warning | danger | text ]
- * @return {String} 16进制RGB
+ * @param {string} type 样式名称 [ primary | success | warning | danger | text ]
+ * @return {string} 16进制RGB
  */
 const typeColor = (type = 'default') => {
   const colors = {
@@ -30,8 +30,8 @@ const typeColor = (type = 'default') => {
 
 /**
  * @description 打印彩色文字
- * @param {arguments} args 函数参数
- * @param {String} type? 颜色类型
+ * @param {*} args 函数参数
+ * @param {string} type? 颜色类型
  */
 const colorful = (args, type = undefined) => {
   const source = Array.from(args).map((item) => ({ item, type })),
@@ -53,9 +53,9 @@ const colorful = (args, type = undefined) => {
 
 /**
  * @description 打印一个 [ title | text ] 样式的信息
- * @param {String} title title text
- * @param {String} info info text
- * @param {String} type style
+ * @param {string} title title text
+ * @param {string} info info text
+ * @param {string} type style
  */
 export const capsule = (title, info, type = 'primary') =>
   log(
