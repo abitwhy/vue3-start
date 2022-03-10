@@ -2,7 +2,7 @@
  * 设置页面标题
  *
  * @param {RouteLocationNormalized} route 路由实例
- * @param {Object} option 配置
+ * @param {object} option 配置
  */
 export const setPageTitle = (
   route,
@@ -29,8 +29,8 @@ export const setPageTitle = (
  * 获取路由 meta 里的标题
  *
  * @param {RouteRecordNormalized} route
- * @param {Object} option 配置
- * @returns {String} 标题，未找到时返回''
+ * @param {object} option 配置
+ * @returns {string} 标题，未找到时返回''
  */
 const getMetaTitle = (
   route,
@@ -65,10 +65,10 @@ const getMetaTitle = (
 /**
  * 默认标题适应器，一种规范结构
  *
- * @param {Object} meta 路由元信息
+ * @param {object} meta 路由元信息
  * @see {@link https://router.vuejs.org/zh/api/#meta}
- * @param {Object} option 配置
- * @returns {String} 标题
+ * @param {object} option 配置
+ * @returns {string} 标题
  */
 export const defaultTitleAdapter = (meta, option) => {
   const defaultOption = {
