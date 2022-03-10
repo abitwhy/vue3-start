@@ -7,7 +7,7 @@
 export const setPageTitle = (
   route,
   /**
-   * @property {function} titleAdapter? 用户自定义标题适应器回调
+   * @property {function} titleAdapter
    * @see {@link getMetaTitle}
    */
   option
@@ -35,7 +35,7 @@ export const setPageTitle = (
 const getMetaTitle = (
   route,
   /**
-   * @property {function} titleAdapter? 用户自定义标题适应器回调，接受参数：(source)
+   * @property {function} titleAdapter 用户自定义标题适应器回调，回调参数：(source)
    */
   option
 ) => {
