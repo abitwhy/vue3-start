@@ -29,8 +29,8 @@ export const setPageTitle = (
  * 获取路由 meta 里的标题
  *
  * @param {RouteRecordNormalized} route
- * @returns {String} 标题，未找到时返回''
  * @param {Object} option 配置
+ * @returns {String} 标题，未找到时返回''
  */
 const getMetaTitle = (
   route,
