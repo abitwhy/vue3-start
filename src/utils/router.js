@@ -56,28 +56,33 @@ const getMetaTitle = (
       ...option,
     }
   const { meta, matched } = route
-  const availableMeta = [meta]
-  if (matched) {
-    availableMeta.concat(matched.reverse().map(({ meta }) => meta))
-  }
-  const availableTitles = availableMeta.map((meta) => titleAdapter(meta))
-  return availableTitles.find((title) => title) || ''
+  const matchedMeta = matched.reverse().map(({ meta }) => meta)
+  const metaStack = [meta, ...matchedMeta, '']
+  const titleStack = metaStack.map((meta) => titleAdapter(meta))
+  return titleStack.find((title) => typeof title === 'string')
 }
 
 /**
  * 默认标题适应器，一种规范结构
  *
- * @param {*} meta 路由元信息
+ * @param {Object} meta 路由元信息
  * @see {@link https://router.vuejs.org/zh/api/#meta}
- * @param {*} option 配置
- * @returns
+ * @param {Object} option 配置
+ * @returns {String} 标题
  */
 export const defaultTitleAdapter = (meta, option) => {
   const defaultOption = {
       breadcrumb: false,
     },
     { breadcrumb } = { ...defaultOption, ...option }
-  const { title = '' } = meta,
-    { base, breadcrumb: breadcrumbTitle = title } = title
-  return breadcrumb ? breadcrumbTitle : base || title
+  const { title } = meta,
+    { base, breadcrumb: breadcrumbTitle } =
+      title || 'Skip deconstruction syntax error'
+  //#region 提供备选可解构值，而不是赋解构默认值，来避免累计解构错误，目的是：
+  // 避免污染 title
+  // 避免与默认返回值混淆（虽然赋解构默认值也可避免这个问题，即赋一个与默认返回值不同类型的可解构值，如 false ）
+  //#endregion
+  const titleStack = [base, title, '']
+  if (breadcrumb && breadcrumbTitle) titleStack.unshift(breadcrumbTitle)
+  return titleStack.find((title) => typeof title === 'string')
 }
