@@ -3,7 +3,16 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import home from '../pages/home.vue'
 
 const routes = [
-  { path: '/', component: home, meta: { title: 'vite 学习之旅' } },
+  {
+    path: '/',
+    component: home,
+    meta: {
+      // 首页不应当设置页面标题，应该保持与 ~index.html 里 <title> 标签中的标题一致
+      title: {
+        breadcrumb: '首页',
+      },
+    },
+  },
   {
     path: '/learn',
     component: () => import('../pages/learn/index.vue'),
@@ -54,7 +63,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  setPageTitle(router, to)
+  setPageTitle(to)
   next()
 })
 export default router

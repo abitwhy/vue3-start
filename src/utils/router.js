@@ -1,12 +1,10 @@
 /**
  * 设置页面标题
  *
- * @param {Router} router vue router 实例
- * @param {RouteLocationNormalized} route 当前路由实例
+ * @param {RouteLocationNormalized} route 路由实例
  * @param {Object} option 配置
  */
 export const setPageTitle = (
-  router,
   route,
   /**
    * @property {function} titleAdapter? 用户自定义标题适应器回调
@@ -22,10 +20,9 @@ export const setPageTitle = (
       ...option,
     }
   const matchedTitle = getMetaTitle(route, { titleAdapter })
-  const homeRoute = router.getRoutes().find(({ path }) => path === '/')
-  const title = matchedTitle || getMetaTitle(homeRoute)
+  const title = matchedTitle
   if (title) document.title = title
-  // 如若未找到 title，默认标题由 <title> 标签设定
+  // 若未找到 title，默认标题由 ~index.html 里 <title> 标签设定
 }
 
 /**
