@@ -70,7 +70,13 @@ const getMetaTitle = (
  * @param {object} option 配置
  * @returns {string} 标题
  */
-export const defaultTitleAdapter = (meta, option) => {
+export const defaultTitleAdapter = (
+  meta,
+  /**
+   * @property {boolean} breadcrumb 是否取面包屑标题
+   */
+  option
+) => {
   const defaultOption = {
       breadcrumb: false,
     },
